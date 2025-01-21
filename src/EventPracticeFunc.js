@@ -24,13 +24,6 @@ const EventPracticeFunc = () => {
     }
    }
 
-   const [form, setForm] = useState({
-    username = '',
-    message = ''
-   })
-
-   const {username, message} = form;
-
    return (
       <div>
          <h2>이벤트 연습 (함수형 컴포넌트) </h2>
