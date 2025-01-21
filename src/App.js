@@ -1,38 +1,28 @@
 import { Component, Fragment } from "react";
 import "./App.css";
-import MyComponent from "./MyComponent";
+import LifeCycleSample from "./LifeCycleSample";
 
-import React from "react";
-import Counter from "./Counter";
-import Say from "./Say";
-import EventPractice from "./EventPractice";
-import EventPracticeFunc from "./EventPracticeFunc";
-import ValidationSample from "./ValidationSample";
-import ScrollBox from "./ScrollBox";
-import IterationSample from "./IterationSample";
-import IterationSample2 from "./IterationSample2";
+function getRandomColor() {
+   return '#' +Math.floor(Math.random() * 16777215).toString(16)
+}
 
 class App extends Component {
+   state = {
+      color: '#000000'
+   }
+
+   handleClick = () => {
+      this.setState({
+         color: getRandomColor()
+      })
+   }
+
    render() {
       return (
-         <Fragment>
-            <MyComponent name="React" ref={(ref) => (this.myComponent = ref)}>
-               리액트
-            </MyComponent>
-            <br />
-            <input type="text" name="appToMyComponent"></input>
-            <Counter></Counter>
-            <Say></Say>
-            <EventPractice></EventPractice>
-            <EventPracticeFunc />
-            <ValidationSample />
-            <ScrollBox ref={(ref) => (this.scrollBox = ref)} />
-            <button onClick={() => this.scrollBox.scrollToBottom()}>
-               맨 밑으로
-            </button>
-            <IterationSample />
-            <IterationSample2 />
-         </Fragment>
+         <div>
+            <button onClick={this.handleClick}>랜덤색상</button>
+            <LifeCycleSample color ={this.state.color}/>
+         </div>
       );
    }
 }
