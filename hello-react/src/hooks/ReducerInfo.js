@@ -8,14 +8,6 @@ const ReducerInfo = () => {
       };
    }
 
-   //    const onChangeName = (e) => {
-   //       setName(e.target.value);
-   //    };
-
-   //    const onChangeNickname = (e) => {
-   //       setNickname(e.target.value);
-   //    };
-
    const [state, dispatch] = useReducer(reducer, {
       name: "",
       nickname: "",
