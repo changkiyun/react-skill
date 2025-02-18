@@ -12,6 +12,7 @@ class MyComponent extends Component {
             <br />
             가장 좋아하는 숫자는 {favoriteNumber} 입니다.
             가장 좋아하는 숫자는 {favoriteNumber} 입니다.
+            가장 좋아하는 숫자는 {favoriteNumber} 입니다.
          </div>
       );
    }
